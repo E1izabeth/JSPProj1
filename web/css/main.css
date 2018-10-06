@@ -1,0 +1,80 @@
+body{
+  background-size: 100%;
+  background-attachment: fixed;
+  background-color: lavender;
+  margin: 0;
+  text-align: center;
+}
+
+div{
+  margin-bottom: 5px;
+}
+
+canvas{
+  margin: 50px;
+}
+
+.input_Y{
+  color: black;
+}
+
+.container{
+  width: 700px;
+  font-family: serif;
+}
+
+header{
+  padding: 40px;
+  color: indigo;
+  font-family: Tahoma;
+  font-weight: bold;
+  font-size: large;
+}
+
+input {
+  margin: 10px;
+  border: 1px solid #cccccc;
+  color: #cccccc;
+  font-size: large;
+  font-family: Tahoma;
+}
+
+
+.answer{
+  display: inline-block;
+  width:300px;
+  height: 250px;
+  border-radius: 10px;
+  background-color: #333333;
+  margin: 10px 40px;
+}
+
+.submit{
+  width: 165px;
+  background: indigo !important;
+  color: #ffffff !important;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.submit:hover{
+  background: peru !important;
+}
+
+.submit:active{
+  background: #b7403e !important;
+}
+
+table.points{
+  border-collapse: collapse;
+}
+
+img.zoom {
+  cursor: pointer;
+  height: 217px;
+  text-align: center;
+}
+img.zoom:hover {
+  width: 650px;
+  margin: 20px 0 0 0;
+}
