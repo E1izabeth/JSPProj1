@@ -12,13 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
-import java.util.List;
 
 @WebServlet(name = "AreaCheckServlet", urlPatterns = "/checking")
 public class AreaCheckServlet extends HttpServlet {
 
     private ServletConfig config;
-    private List<RequestInfo> list = null;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -76,7 +74,7 @@ public class AreaCheckServlet extends HttpServlet {
         out.println("<form action=\"index.jsp\" method=\"GET\" style=\"padding:20px 0px;\">" +
                 "<button class='submit' style=\"color: #ffffff\"> Return to HOME </button>  <br />" +
                 "</form>");
-        out.println("<br /> <table class='points'> <tr><td>X coordinate</td><td>Y coordinate</td><td>Radius</td><td>Entrance</td></tr>");
+        out.println("<br /> <table class='points' border=1 align=center> <tr><td>X coordinate</td><td>Y coordinate</td><td>Radius</td><td>Entrance</td></tr>");
 
         for (RequestInfo r : bean.getAllResults()) {
             out.println("<tr>");
