@@ -20,11 +20,27 @@ jQuery('document').ready(function() {
     applyExclusivenessForCheckboxes('.R');
 
     $('.R').click(function() {
-        drawCanwas('canvas', this.value);
+        //drawCanwas('canvas', this.value);
+        $('#areaImg').prop('src', 'area.jsp?R=' + getCheckboxedValue('.R'));
     });
 
-    $('#canvas').click(function() {
-        clicCanvas('canvas', getCheckboxedValue('.R'));
+    //$('#canvas').click(function() {
+    //    clicCanvas('canvas', getCheckboxedValue('.R'));
+    //});
+
+    $('#areaImg').click(function(ev) {
+        var x = (ev.offsetX - 100) / 50;
+        var y = (100 - ev.offsetY) / 50;
+        var r = getCheckboxedValue('.R');
+
+        $.post($('form').prop('action'), {
+            X: x * r,
+            Y: y * r,
+            R: r,
+            formAction: 'check'
+        }, function() {
+            $("#areaImg").removeAttr("src").attr("src", "area.jsp?R=" + r + "&t=" + new Date().getTime());
+        });
     });
 });
 
@@ -53,7 +69,7 @@ function validate(_form){
         $('#empty_div').text(fail);
         return false;
     } else {
-        createCanvas('canvas', X, Y, R);
+        //createCanvas('canvas', X, Y, R);
         return true;
     }
 }

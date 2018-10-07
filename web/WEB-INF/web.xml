@@ -22,8 +22,21 @@
         <url-pattern>/checking</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AreaServlet</servlet-name>
+        <servlet-class>Lab_2.AreaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AreaServlet</servlet-name>
+        <url-pattern>/area.jsp</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>control</welcome-file>
     </welcome-file-list>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
 </web-app>

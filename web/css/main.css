@@ -69,12 +69,7 @@ table.points{
   border-collapse: collapse;
 }
 
-img.zoom {
-  cursor: pointer;
-  height: 217px;
-  text-align: center;
-}
-img.zoom:hover {
-  width: 650px;
-  margin: 20px 0 0 0;
+#areaImg {
+  width: 200px;
+  height: 200px;
 }

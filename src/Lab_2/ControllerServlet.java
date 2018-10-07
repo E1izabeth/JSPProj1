@@ -9,10 +9,9 @@ import java.util.logging.Logger;
 
 public class ControllerServlet extends HttpServlet {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		String actStr = request.getParameter("action");
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String actStr = request.getParameter("formAction");
 		if (actStr == null || !actStr.equals("check")){
 			Logger.getLogger(getClass().getName()).warning("going to index.jsp");
 			request.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
@@ -21,10 +20,4 @@ public class ControllerServlet extends HttpServlet {
 			request.getServletContext().getRequestDispatcher("/checking").forward(request, response);
 		}
 	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-	}
-
 }
